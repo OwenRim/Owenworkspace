@@ -47,24 +47,31 @@ function onColorClick(event) {
   color.value = colorValue;
 }
 
-// function onModeClick() {
-//   if (isFilling) {
-//     isFilling = false;
-//     modeBtn.innerText = "Fill";
-//   } else {
-//     isFilling = true;
-//     modeBtn.innerText = "Draw";
-//   }
-// }
+function onModeClick() {
+  if (isFilling) {
+    isFilling = false;
+    modeBtn.innerText = "Fill";
+  } else {
+    isFilling = true;
+    modeBtn.innerText = "Draw";
+  }
+}
+
+function onCanvasClick() {
+  if (isFilling) {
+    ctx.fillRect(0, 0, 800, 800);
+  }
+}
 
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
+canvas.addEventListener("click", onCanvasClick);
 
 lineWidth.addEventListener("change", onLineWidthChange);
 color.addEventListener("change", onColorChange);
 
 colorOptions.forEach((color) => color.addEventListener("click", onColorClick));
 
-//modeBtn.addEventListener("click", onModeClick);
+modeBtn.addEventListener("click", onModeClick);
