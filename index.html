@@ -9,7 +9,15 @@
   </head>
   <body>
     <canvas></canvas>
-    <input id="line-width" type="range" min="1" max="10" value="5" step="0.1" />
+    <input
+      id="line-width"
+      type="range"
+      min="1"
+      max="10"
+      value="5"
+      s
+      tep="0.1"
+    />
     <input type="color" id="color" />
     <div
       class="color-option"
@@ -74,6 +82,7 @@
     <button id="mode-btn">Fill</button>
     <button id="destroy-btn">Destroy</button>
     <button id="eraser-btn">Eraser</button>
+    <input type="file" accept="image/*" id="file" />
     <script src="app.js"></script>
   </body>
 </html>
