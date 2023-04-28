@@ -105,7 +105,6 @@ function onDoubleClick(event) {
     ctx.restore();
   }
 }
-
 function onSaveClick() {
   const url = canvas.toDataURL();
   const a = document.createElement("a");
